@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "384904058596",
+    "project_id": "archdiocese-ece40",
+    "storage_bucket": "archdiocese-ece40.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384904058596:android:6952ad4f047ac5a5a3bef1",
+        "android_client_info": {
+          "package_name": "com.example.archdiocese"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384904058596-v1i8trg6cs06njqn3prs7frg902me3c3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.archdiocese",
+            "certificate_hash": "8030344f7e697c1d94c5ede35ec985ccf2c66498"
+          }
+        },
+        {
+          "client_id": "384904058596-pordltac4r30vip5j5kih0nhrpsg2gd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-fBAi4WzS9_CPet7cRC24Nk7zEfRPOns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "384904058596-pordltac4r30vip5j5kih0nhrpsg2gd1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "384904058596-oru2smo3of3tj6bcc5q0demdign02t57.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.archdiocese"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

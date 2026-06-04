@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "384904058596",
+    "project_id": "archdiocese-ece40",
+    "storage_bucket": "archdiocese-ece40.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384904058596:android:6952ad4f047ac5a5a3bef1",
+        "android_client_info": {
+          "package_name": "com.example.archdiocese"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-fBAi4WzS9_CPet7cRC24Nk7zEfRPOns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

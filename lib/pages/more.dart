@@ -18,7 +18,7 @@ class _MoreContentState extends State<MoreContent> {
       backgroundColor: AppColors.backgroundCream,
       appBar: AppBar(
         backgroundColor: AppColors.primaryGreen,
-        leading: BackButton(color: AppColors.liturgicalWhite),
+        //leading: BackButton(color: AppColors.liturgicalWhite),
         title: Text(
           'More Options',
           style: GoogleFonts.lora(

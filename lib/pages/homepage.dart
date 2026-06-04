@@ -545,18 +545,12 @@ builder: (context, state) {
                             //season.toLowerCase() == "easter"
                             //)
                             ? Colors.black 
-                            : Colors.white,
+                            : Colors.black,
                           ),
                         ),
                       ],
                     ),
-                    // Spacer(),
-                    // Image.asset(
-                    //   'assets/img/grassbg.png',
-                    //   fit: BoxFit.cover,
-                    //   height: 100.0,
-                    //   width: 70.0,
-                    // ),
+                    
                   ],
                 ),
               );
