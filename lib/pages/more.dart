@@ -51,7 +51,7 @@ class _MoreContentState extends State<MoreContent> {
                           ),
                         ),
                         Text(
-                          'SEASONS OF THE\nCHURCH',
+                          'SEASONS OF THE CHURCH',
                           style: GoogleFonts.poppins(color:AppColors.textPrimary, fontWeight: FontWeight.w800 ),
                           textAlign: TextAlign.center,
                         ),

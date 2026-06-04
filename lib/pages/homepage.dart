@@ -10,7 +10,9 @@ import 'package:archdiocese/pages/more.dart';
 import 'package:archdiocese/pages/parish.dart';
 import 'package:archdiocese/pages/pastoralvisit.dart';
 import 'package:archdiocese/pages/priests.dart';
+import 'package:archdiocese/pages/profile.dart';
 import 'package:archdiocese/pages/saints.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:archdiocese/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -76,6 +78,7 @@ final isMobile = width<600;
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -88,7 +91,7 @@ final isMobile = width<600;
                       //width*0.12
                     ),
                   ),
-                  SizedBox(width: 60.0),
+                  //SizedBox(width: 60.0),
                   Center(
                     child: Text(
                       'Archdiocese Liturgical\n Programme',
@@ -96,9 +99,49 @@ final isMobile = width<600;
                       style: GoogleFonts.lora(fontWeight: FontWeight.w900),
                     ),
                   ),
-         
-                ],
-              ),
+                  PopupMenuButton<String>
+                  (icon: Icon(Icons.menu),
+                  onSelected: (value) async {
+                    if (value == 'Profile'){
+                      Navigator.push(context,
+                       MaterialPageRoute(
+                        builder: (context)=> ProfileScreen()));
+                    }
+                    if (value == 'logout'){
+                      await FirebaseAuth.instance.signOut();
+                      if (context.mounted){
+                        Navigator.pushNamedAndRemoveUntil(context, '/', (route)=>false,);
+                      }
+                    }
+                  },
+                    itemBuilder: (context) =>[
+                      PopupMenuItem<String>(
+                        value: 'Profile',
+                        child: 
+                          Row(
+                            children: [
+                              Icon(Icons.person),
+                              SizedBox(width: 10),
+                              Text('Profile')
+                            ],
+                          ),      
+                  ),
+                  PopupMenuItem<String>(
+                    value: 'logout',
+                    child: Row(
+                      children: [
+                              Icon(Icons.logout),
+                              SizedBox(width: 10),
+                          Text('Logout'),
+                            ],
+                    )
+                    )
+                  ],
+                      )
+            ]),
+                    
+                
+             
               Divider(thickness: 4.0, color: AppColors.liturgicalGold),
               Text(
                 'Today in the Liturgy',
@@ -372,84 +415,7 @@ final isMobile = width<600;
                   ),
                                ),
                ),
-                SizedBox(height: 20.0),
-               //6th container
-//                BlocBuilder<SaintTodayCubit,SaintTodayState>(builder: (context, state){
-//                 if (state is SaintTodayLoading){
-//                   return CircularProgressIndicator();
-//                 }
-//                 if (state is SaintTodayLoaded){
-// final celebrations = state.saint['celebrations'];
-// if (celebrations == null || celebrations.isEmpty) {
-//     return Text("No celebration today");
-//   }
-//     final saint = celebrations[0];
-
-//   final saintName = saint['title'];
-//   final rank = saint['rank'];
-//   final colour = saint['colour'];
-
-//                   //final saintName = state.saint['name']?? "Unknown Saint";
-//  return  GestureDetector(
-//                   onTap: () {
-//                     Navigator.push(context, MaterialPageRoute(builder: (context)=> SaintScreen()));
-//                   },
-//                   child: Container(
-//                   padding: EdgeInsets.all(10.0),
-//                   height: 80,
-//                   width: 300,
-//                   decoration: BoxDecoration(
-//                     gradient: LinearGradient(
-//                     colors: [
-//                        AppColors.lightGreen,
-//                       AppColors.secondaryGreen,
-                     
-//                     ],
-//                   ),
-//                     //color: AppColors.secondaryGreen,
-//                     borderRadius: BorderRadius.circular(10.0),
-//                   ),
-//                   child: Row(
-//                     children: [
-//                       Column(
-//                         children: [
-//                           Text(
-//                             'Liturgical Day:',
-//                             style: GoogleFonts.lora(
-//                               fontWeight: FontWeight.w500,
-//                               color: AppColors.liturgicalWhite,
-//                             ),
-//                           ),
-//                           Text(
-//                             saintName,
-//                             style: GoogleFonts.lora(
-//                               fontWeight: FontWeight.w700,
-//                               color: AppColors.liturgicalWhite,
-//                             ),
-//                           ),
-//                         ],
-//                       ),
-//                       Spacer(),
-//                       Image.asset(
-//                         'assets/img/saints.jpg',
-//                         fit: BoxFit.cover,
-//                         height: 100.0,
-//                         width: 70.0,
-//                       ),
-//                     ],
-//                   ),
-//                                 ),
-//                 );
-
-
-//                 }
-//                 if (state is SaintTodayError){
-//                   return Text(state.message);
-//                 }
-//                 return SizedBox();
-//                }),
-              
-             
+               // SizedBox(height: 20.0),
               SizedBox(height: 20.0),
               //7th container
                 BlocBuilder<ReadingsCubit, ReadingsState>(
@@ -587,10 +553,14 @@ builder: (context, state) {
                 ),
               ),
               SizedBox(height: 30),
-            ],
-          ),
-        ),
-      ),
+    ]
+    )
+    )
+    )
     );
+    
+   
+          
+      
   }
 }
