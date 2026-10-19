@@ -155,6 +155,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         color: AppColors.primaryGreen,
                         fontWeight: FontWeight.w500,
                       ),
+                      
                     ),
                   ),
                 ),
@@ -264,6 +265,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Don't have an account?"),
+                    
                     TextButton(
                       onPressed: () {
                         Navigator.push(
